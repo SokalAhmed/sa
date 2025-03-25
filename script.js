@@ -7,14 +7,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function loadQuestions() {
   try {
-    const response = await fetch('https://sokalahmed.github.io/sa/questions.json?t=${Date.now()}`);');
+    const response = await fetch('https://sokalahmed.github.io/sa/questions.json');
     if (!response.ok) throw new Error("Failed to load questions");
     myQuestions = await response.json();
     buildQuiz();
   } catch (error) {
-    console.error("Error loading questions:", error);
-    document.getElementById('quiz').innerHTML = 
-      '<p class="error">Error loading questions. Please try again later.</p>';
+    console.error("Error:", error);
+    document.getElementById('quiz').innerHTML = `
+      <div class="error">
+        <p>Failed to load questions. Try:</p>
+        <ul>
+          <li>Refresh the page</li>
+          <li>Check internet connection</li>
+          <li><a href="https://sokalahmed.github.io/sa/">Visit homepage</a></li>
+        </ul>
+      </div>
+    `;
   }
 }
 
