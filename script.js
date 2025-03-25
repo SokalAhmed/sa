@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsContainer = document.getElementById('results');
     const submitButton = document.getElementById('submit');
     let myQuestions = [];
-    let timeLeft = 10; // 60 seconds (1 minute)
+    let timeLeft = 30; // 60 seconds (1 minute)
     let timer;
 
     // Simple timer display
