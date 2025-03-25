@@ -3,14 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsContainer = document.getElementById('results');
     const submitButton = document.getElementById('submit');
     let myQuestions = [];
-    let timeLeft = 30; // 60 seconds (1 minute)
+    let timeLeft = 10; // 60 seconds (1 minute)
     let timer;
 
     // Simple timer display
     const timerDisplay = document.createElement('div');
     timerDisplay.id = 'timer';
     //quizContainer.parentNode.insertBefore(timerDisplay, quizContainer);
-    timerDisplay.textContent = '⌛';
+    timerDisplay.textContent = 'Time: 30s';
     document.body.prepend(timerDisplay); // Add to top of body
 
     function startTimer() {
@@ -116,6 +116,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Mark wrong answer
                 const wrongInput = document.querySelector(`#q${questionNumber}${userAnswer}`);
                 wrongInput.parentElement.classList.add('wrong-answer');
+                }
+            
+                if (userAnswer === currentQuestion.correctAnswer) {
+                numCorrect++;
+                answerContainer.parentElement.classList.add('correct');
+                answerContainer.parentElement.classList.remove('incorrect');
+            } else {
+                answerContainer.parentElement.classList.add('incorrect');
+                answerContainer.parentElement.classList.remove('correct');
             }
         });
         
@@ -124,6 +133,17 @@ document.addEventListener('DOMContentLoaded', function() {
             <p>${getScoreFeedback(numCorrect, myQuestions.length)}</p>
         `;
         resultsContainer.style.display = 'block';
+        
+            // Scroll to results
+        resultsContainer.scrollIntoView({ behavior: 'smooth' });
+        
+          // Disable all inputs after submission
+        document.querySelectorAll('.answer input').forEach(input => {
+            input.disabled = true;
+        });
+        
+        // Disable submit button
+        submitButton.disabled = true;
     }
 
     function getScoreFeedback(correct, total) {
