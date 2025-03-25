@@ -1,13 +1,13 @@
 [
   {
-    "question": "What is the capital of France?",
+    "question": "What is the capital of Japan?",
     "answers": {
-      "a": "London",
-      "b": "Paris",
-      "c": "Berlin",
-      "d": "Madrid"
+      "a": "Beijing",
+      "b": "Seoul",
+      "c": "Tokyo",
+      "d": "Bangkok"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "c"
   },
   {
     "question": "Which planet is known as the Red Planet?",
@@ -18,5 +18,85 @@
       "d": "Saturn"
     },
     "correctAnswer": "b"
+  },
+  {
+    "question": "What is the largest mammal?",
+    "answers": {
+      "a": "Elephant",
+      "b": "Blue Whale",
+      "c": "Giraffe",
+      "d": "Polar Bear"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "Which language runs in a web browser?",
+    "answers": {
+      "a": "Java",
+      "b": "C",
+      "c": "Python",
+      "d": "JavaScript"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "question": "What does HTML stand for?",
+    "answers": {
+      "a": "Hypertext Markup Language",
+      "b": "Hyper Trainer Marking Language",
+      "c": "Hyperlinks and Text Markup Language",
+      "d": "Home Tool Markup Language"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "Which year was JavaScript launched?",
+    "answers": {
+      "a": "1990",
+      "b": "1995",
+      "c": "2000",
+      "d": "2005"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "What is the chemical symbol for gold?",
+    "answers": {
+      "a": "Go",
+      "b": "Gd",
+      "c": "Au",
+      "d": "Ag"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "Which country gifted the Statue of Liberty to the US?",
+    "answers": {
+      "a": "England",
+      "b": "Canada",
+      "c": "France",
+      "d": "Spain"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "How many continents are there?",
+    "answers": {
+      "a": "5",
+      "b": "6",
+      "c": "7",
+      "d": "8"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "answers": {
+      "a": "Vincent van Gogh",
+      "b": "Pablo Picasso",
+      "c": "Leonardo da Vinci",
+      "d": "Michelangelo"
+    },
+    "correctAnswer": "c"
   }
 ]
