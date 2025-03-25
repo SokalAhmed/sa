@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function loadQuestions() {
   try {
-    const response = await fetch('https://sokalahmed.github.io/sa/questions.json');
+    const response = await fetch('https://sokalahmed.github.io/sa/questions.json?t=${Date.now()}`);');
     if (!response.ok) throw new Error("Failed to load questions");
     myQuestions = await response.json();
     buildQuiz();
