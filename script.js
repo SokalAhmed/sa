@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const timerDisplay = document.createElement('div');
     timerDisplay.id = 'timer';
     //quizContainer.parentNode.insertBefore(timerDisplay, quizContainer);
-    timerDisplay.textContent = 'Time: 30s';
+    timerDisplay.textContent = '⌛';
     document.body.prepend(timerDisplay); // Add to top of body
 
     function startTimer() {
