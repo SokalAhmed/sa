@@ -116,3 +116,45 @@ button:hover {
 .wrong-answer label {
     color: #dc3545;
 }
+/* Sticky Timer Styles */
+#timer {
+    position: fixed;
+    display: block; /* initially visible */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #2c3e50;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Warning state (last 10 seconds) */
+#timer.warning {
+    background: #e74c3c;
+    animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from { background: #e74c3c; }
+    to { background: #c0392b; }
+}
+
+/* Add padding to body to prevent content hiding behind timer */
+/* body {
+    padding-top: 50px;
+} */
+
+/* Add this to prevent content jump when timer hides */
+body {
+    padding-top: 10px; /* Same as timer height */
+    transition: padding-top 0.3s ease;
+}
+
+/* body.timer-hidden {
+    padding-top: 0;
+} */

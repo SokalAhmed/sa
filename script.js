@@ -3,17 +3,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsContainer = document.getElementById('results');
     const submitButton = document.getElementById('submit');
     let myQuestions = [];
+    let timeLeft = 10; // 60 seconds (1 minute)
+    let timer;
 
-    // In script.js - Add timer functionality
-   let timeLeft = 30;
-   const timer = setInterval(() => {
-     if(timeLeft <= 0) {
-       clearInterval(timer);
-       showResults();
-     }
-     document.getElementById('timer').textContent = timeLeft;
-     timeLeft--;
-   }, 1000);
+    // Simple timer display
+    const timerDisplay = document.createElement('div');
+    timerDisplay.id = 'timer';
+    //quizContainer.parentNode.insertBefore(timerDisplay, quizContainer);
+    timerDisplay.textContent = 'Time: 30s';
+    document.body.prepend(timerDisplay); // Add to top of body
+
+    function startTimer() {
+        updateTimer();
+        timer = setInterval(updateTimer, 1000);
+    }
+
+    function updateTimer() {
+        timerDisplay.textContent = `Time: ${timeLeft}s`;
+        timeLeft--;
+        
+        if (timeLeft <= 5) { // Visual warning for last 10 seconds
+                timerDisplay.classList.add('warning');
+            }
+
+        if (timeLeft < 0) {
+            //clearInterval(timer);
+            submitButton.click(); // Auto-submit when time runs out
+        }
+    }
+    
+    function hideTimer() {
+    clearInterval(timer);
+    timerDisplay.style.display = 'none';
+    document.body.classList.add('timer-hidden');
+}
     // Load questions from JSON
     async function loadQuestions() {
         try {
@@ -24,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             myQuestions = await response.json();
             buildQuiz();
             submitButton.disabled = false;
+            startTimer(); // start the timer
         } catch (error) {
             console.error('Error loading questions:', error);
             quizContainer.innerHTML = `
@@ -72,6 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function showResults() {
         const answerContainers = quizContainer.querySelectorAll('.answers');
         let numCorrect = 0;
+        clearInterval(timer);
+        hideTimer();
         
         myQuestions.forEach((currentQuestion, questionNumber) => {
             const answerContainer = answerContainers[questionNumber];
