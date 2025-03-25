@@ -124,6 +124,8 @@ button:hover {
     left: 0;
     right: 0;
     background: #2c3e50;
+    opacity: 0.8;
+    /* background: rgba(44, 62, 80, 0.5); */
     color: white;
     padding: 5px;
     text-align: center;
