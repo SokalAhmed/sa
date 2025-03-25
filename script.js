@@ -4,6 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitButton = document.getElementById('submit');
     let myQuestions = [];
 
+    // In script.js - Add timer functionality
+   let timeLeft = 60;
+   const timer = setInterval(() => {
+     if(timeLeft <= 0) {
+       clearInterval(timer);
+       showResults();
+     }
+     document.getElementById('timer').textContent = timeLeft;
+     timeLeft--;
+   }, 1000);
     // Load questions from JSON
     async function loadQuestions() {
         try {
