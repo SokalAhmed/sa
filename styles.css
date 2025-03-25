@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.quiz-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.question {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.question h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.answers {
+    margin-left: 20px;
+}
+
+.answer {
+    margin-bottom: 10px;
+}
+
+.answer label {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#results {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+.correct {
+    background-color: #d4edda;
+}
+
+.incorrect {
+    background-color: #f8d7da;
+}
+
+/* Add these to your existing CSS */
+
+/* Correct answer indicator (always shown) */
+.correct-answer label::before {
+    content: "✓ ";
+    color: #28a745;
+}
+
+/* User selected correct answer */
+.correct-selected input[type="radio"] {
+    accent-color: #28a745;
+}
+
+/* User selected wrong answer */
+.wrong-answer input[type="radio"] {
+    accent-color: #dc3545;
+}
+
+/* Disabled state after submission */
+.answer input:disabled {
+    cursor: not-allowed;
+}
+
+/* Style the correct answer text */
+.correct-answer label {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Style the wrong answer text if selected */
+.wrong-answer label {
+    color: #dc3545;
+}
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.error {
+  color: #dc3545;
+}
