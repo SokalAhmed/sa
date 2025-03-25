@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let myQuestions = [];
 
     // In script.js - Add timer functionality
-   let timeLeft = 60;
+   let timeLeft = 30;
    const timer = setInterval(() => {
      if(timeLeft <= 0) {
        clearInterval(timer);
