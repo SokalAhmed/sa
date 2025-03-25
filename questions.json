@@ -30,12 +30,12 @@
     "correctAnswer": "b"
   },
   {
-    "question": "Which language runs in a web browser?",
+    "question": "What is the largest ocean on Earth?",
     "answers": {
-      "a": "Java",
-      "b": "C",
-      "c": "Python",
-      "d": "JavaScript"
+      "a": "Atlantic Ocean",
+      "b": "Indian Ocean",
+      "c": "Arctic Ocean",
+      "d": "Pacific Ocean"
     },
     "correctAnswer": "d"
   },
@@ -50,12 +50,12 @@
     "correctAnswer": "a"
   },
   {
-    "question": "Which year was JavaScript launched?",
+    "question": "In which year did World War II end?",
     "answers": {
-      "a": "1990",
-      "b": "1995",
-      "c": "2000",
-      "d": "2005"
+      "a": "1943",
+      "b": "1945",
+      "c": "1947",
+      "d": "1950"
     },
     "correctAnswer": "b"
   },
@@ -70,14 +70,14 @@
     "correctAnswer": "c"
   },
   {
-    "question": "Which country gifted the Statue of Liberty to the US?",
+    "question": "Who wrote 'Romeo and Juliet'?",
     "answers": {
-      "a": "England",
-      "b": "Canada",
-      "c": "France",
-      "d": "Spain"
+      "a": "Charles Dickens",
+      "b": "William Shakespeare",
+      "c": "Jane Austen",
+      "d": "Mark Twain"
     },
-    "correctAnswer": "c"
+    "correctAnswer": "b"
   },
   {
     "question": "How many continents are there?",
