@@ -116,12 +116,3 @@ button:hover {
 .wrong-answer label {
     color: #dc3545;
 }
-.loading, .error {
-  text-align: center;
-  padding: 20px;
-  color: #666;
-}
-
-.error {
-  color: #dc3545;
-}
