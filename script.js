@@ -110,21 +110,14 @@ document.addEventListener('DOMContentLoaded', function() {
             correctInput.parentElement.classList.add('correct-answer');
             
             if (userAnswer === correctAnswer) {
-                numCorrect++;
-                correctInput.parentElement.classList.add('correct-selected');
-            } else if (userAnswer) {
-                // Mark wrong answer
-                const wrongInput = document.querySelector(`#q${questionNumber}${userAnswer}`);
-                wrongInput.parentElement.classList.add('wrong-answer');
-                }
-            
-                if (userAnswer === currentQuestion.correctAnswer) {
-                numCorrect++;
-                answerContainer.parentElement.classList.add('correct');
-                answerContainer.parentElement.classList.remove('incorrect');
-            } else {
-                answerContainer.parentElement.classList.add('incorrect');
-                answerContainer.parentElement.classList.remove('correct');
+            numCorrect++; // ONLY INCREMENT ONCE
+            correctInput.parentElement.classList.add('correct-selected');
+            answerContainer.parentElement.classList.add('correct');
+        } else if (userAnswer) {
+            // Mark wrong answer
+            const wrongInput = document.querySelector(`#q${questionNumber}${userAnswer}`);
+            wrongInput.parentElement.classList.add('wrong-answer');
+            answerContainer.parentElement.classList.add('incorrect');
             }
         });
         
